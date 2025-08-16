@@ -1,3 +1,43 @@
+/* Animasi masuk dari kiri ke kanan */
+.animate-intro-left {
+  opacity: 1;
+  animation: appearLeft 1s ease-in-out forwards;
+}
+.animate-intro-left2 {
+  opacity: 1;
+  animation: appearLeft 1.8s ease-in-out forwards;
+}
+.animate-exp-row {
+  opacity: 1;
+  animation: appearLeft 1s 0.8s ease-in-out forwards;
+}
+.animate-text-left1 {
+  opacity: 1;
+  animation: appearLeft 1s 1.25s ease-in-out forwards;
+}
+.animate-text-left2 {
+  opacity: 1;
+  animation: appearLeft 1s 1.5s ease-in-out forwards;
+}
+.animate-text-section {
+  opacity: 1;
+  animation: appearLeft 1s 1.6s ease-in-out forwards;
+}
+.animate-text-section2 {
+  opacity: 1;
+  animation: appearLeft 1s 1.8s ease-in-out forwards;
+}
+
+@keyframes appearLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -201,17 +241,22 @@ body.container {
 .introduce {
   flex: 1;
   margin-left: 60px;
+  transition: none;
 }
 
 .introduce p {
   font-size: 14px;
   margin-bottom: 10px;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .experience {
   margin-top: 20px;
   padding-top: 20px;
   margin: 0 0 20px 0;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .experience h1 {
@@ -228,6 +273,8 @@ body.container {
   display: flex;
   gap: 10px;
   font-size: 14px;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .exp-row {
@@ -241,6 +288,17 @@ body.container {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 10px;
   color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.exp-row-dad p {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.animate-exp-row-dad {
+  opacity: 1;
+  animation: appearLeft 1s 0.65s ease-in-out forwards;
 }
 
 .text-section {
@@ -255,6 +313,12 @@ body.container {
   font-size: 24px;
   padding-left: 20px;
   margin-bottom: 18px;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.text-section > div {
+  opacity: 0;
+  transform: translateX(-100px);
 }
 
 .text-section i {
@@ -271,6 +335,13 @@ body.container {
   justify-content: center;
   align-items: center;
   margin-right: 80px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: none;
+}
+.animate-appearRight {
+  opacity: 1;
+  animation: appearRight 1s ease-in-out forwards;
 }
 
 .image-section img {
@@ -366,6 +437,17 @@ body.container {
   transform: scale(1.5);
   transition: 0.2s ease-in-out;
   opacity: 0.7;
+}
+
+@keyframes appearRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Tablet */

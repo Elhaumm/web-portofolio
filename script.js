@@ -43,4 +43,78 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.transform = transform.trim();
     });
   });
+
+  // IntersectionObserver untuk image-section
+  const imageSection = document.querySelector(".image-section");
+  if (imageSection) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.9) {
+            imageSection.classList.add("animate-appearRight");
+            obs.unobserve(imageSection);
+          }
+        });
+      },
+      { threshold: 0.9 }
+    );
+    observer.observe(imageSection);
+  }
+
+  // IntersectionObserver untuk About section
+
+  const aboutSection = document.querySelector(".about .introduce");
+  if (aboutSection) {
+    // Ambil semua elemen urut di dalam .introduce
+    const experience = aboutSection.querySelector(".experience");
+    const experienceP = experience ? experience.querySelector("p") : null;
+    const expRowDad = aboutSection.querySelector(".exp-row-dad");
+    const expRows = expRowDad ? expRowDad.querySelectorAll(".exp-row") : [];
+    // Ambil div setelah exp-row-dad (yang berisi p)
+    let textLeft1 = null;
+    const divs = aboutSection.querySelectorAll(":scope > div");
+    divs.forEach((div) => {
+      if (
+        !div.classList.contains("experience") &&
+        !div.classList.contains("exp-row-dad") &&
+        !div.classList.contains("text-section")
+      ) {
+        const p = div.querySelector("p");
+        if (p) textLeft1 = p;
+      }
+    });
+    const textSection = aboutSection.querySelector(".text-section h4");
+    const textSection2 = aboutSection.querySelector(".text-section div");
+
+    // Daftar urutan animasi e
+    const elements = [
+      { el: experience, className: "animate-intro-left" },
+      { el: experienceP, className: "animate-intro-left2" },
+      { el: expRowDad, className: "animate-exp-row-dad" },
+      ...Array.from(expRows).map((row) => ({
+        el: row,
+        className: "animate-exp-row",
+      })),
+      { el: textLeft1, className: "animate-text-left1" },
+      { el: textSection, className: "animate-text-section" },
+      { el: textSection2, className: "animate-text-section2" },
+    ];
+
+    elements.forEach(({ el, className }) => {
+      if (!el) return;
+      el.classList.remove(className);
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              el.classList.add(className);
+              obs.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+    });
+  }
 });
