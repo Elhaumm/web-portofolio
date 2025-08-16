@@ -1,31 +1,31 @@
 /* Animasi masuk dari kiri ke kanan */
 .animate-intro-left {
   opacity: 1;
-  animation: appearLeft 1s ease-in-out forwards;
+  animation: appearLeft 0.7s ease-in-out forwards;
 }
 .animate-intro-left2 {
   opacity: 1;
-  animation: appearLeft 1.8s ease-in-out forwards;
+  animation: appearLeft 1.2s ease-in-out forwards;
 }
 .animate-exp-row {
   opacity: 1;
-  animation: appearLeft 1s 0.8s ease-in-out forwards;
+  animation: appearLeft 0.7s 0.5s ease-in-out forwards;
 }
 .animate-text-left1 {
   opacity: 1;
-  animation: appearLeft 1s 1.25s ease-in-out forwards;
+  animation: appearLeft 0.7s 0.9s ease-in-out forwards;
 }
 .animate-text-left2 {
   opacity: 1;
-  animation: appearLeft 1s 1.5s ease-in-out forwards;
+  animation: appearLeft 0.7s 1.2s ease-in-out forwards;
 }
 .animate-text-section {
   opacity: 1;
-  animation: appearLeft 1s 1.6s ease-in-out forwards;
+  animation: appearLeft 0.6s 0.9s ease-in-out forwards;
 }
 .animate-text-section2 {
   opacity: 1;
-  animation: appearLeft 1s 1.8s ease-in-out forwards;
+  animation: appearLeft 0.7s 1s ease-in-out forwards;
 }
 
 @keyframes appearLeft {

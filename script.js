@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const experienceP = experience ? experience.querySelector("p") : null;
     const expRowDad = aboutSection.querySelector(".exp-row-dad");
     const expRows = expRowDad ? expRowDad.querySelectorAll(".exp-row") : [];
-    // Ambil div setelah exp-row-dad (yang berisi p)
+    // Ambil div setelah exp-row-dad (yang berisi p)`
     let textLeft1 = null;
     const divs = aboutSection.querySelectorAll(":scope > div");
     divs.forEach((div) => {
